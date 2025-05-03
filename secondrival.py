@@ -21,6 +21,13 @@ wn.setup(width=800, height=800)  # Set window size to 800x800
 wn.tracer(0)  # Turns off the screen updates
 
 def main_menu():
+
+    """
+    Displays the main menu for the Snake Game.
+
+    Provides options to start the game or quit.
+    """
+
     wn.clear()
     wn.bgcolor("white")
     menu_pen = turtle.Turtle()
@@ -48,6 +55,13 @@ def main_menu():
     wn.onkeypress(quit_game, "q")   # Press 'q' to quit
 
 def start_snake_game():
+
+    """
+    Starts the Snake Game with a computer-controlled rival snake.
+
+    Initializes the player snake, computer snake, food, and game logic.
+    """
+
     global head, food, segments, pen, score, high_score, comp_head, comp_segments, comp_direction
     wn.clear()
     
@@ -143,6 +157,11 @@ def start_snake_game():
                 comp_direction = "right"
 
     def game_loop():
+
+        """
+        Updates the game state, including movement, collisions, and scoring.
+        """
+
         global score, high_score, delay
         wn.update()
 
@@ -196,6 +215,11 @@ def start_snake_game():
         wn.ontimer(game_loop, int(delay * 1000))
 
     def game_over():
+
+        """
+        Resets the game state and plays a game-over sound.
+        """
+
         pygame.mixer.music.load("gameover.wav")
         pygame.mixer.music.play()
         time.sleep(1)

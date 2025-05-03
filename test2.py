@@ -21,6 +21,13 @@ wn.setup(width=1920, height=1080)
 wn.tracer(0)  # Turns off the screen updates
 
 def main_menu():
+
+    """
+    Displays the main menu for the Snake Game.
+
+    Provides options to start the game or quit.
+    """
+
     wn.clear()
     wn.bgcolor("white")
     menu_pen = turtle.Turtle()
@@ -48,6 +55,13 @@ def main_menu():
     wn.onkeypress(quit_game, "q")   # Press 'q' to quit
 
 def start_snake_game():
+
+    """
+    Starts the Snake Game.
+
+    Initializes the snake, food, and game logic.
+    """
+
     global head, food, segments, pen, score, high_score
     wn.clear()
     
@@ -108,6 +122,11 @@ def start_snake_game():
             head.setx(head.xcor() + 20)
     
     def game_loop():
+
+        """
+        Updates the game state, including movement, collisions, and scoring.
+        """
+
         wn.update()
 
         # Move segments in reverse order
